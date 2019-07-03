@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Addresses" representedClassName="Addresses" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lng" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contacts" inverseName="addresses" inverseEntity="Contacts" syncable="YES"/>
+    </entity>
+    <entity name="Companies" representedClassName="Companies" syncable="YES" codeGenerationType="class">
+        <attribute name="bs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="catchPhrase" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contacts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contacts" inverseName="companies" inverseEntity="Contacts" syncable="YES"/>
+    </entity>
+    <entity name="Contacts" representedClassName="Contacts" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="addresses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Addresses" inverseName="contacts" inverseEntity="Addresses" syncable="YES"/>
+        <relationship name="companies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Companies" inverseName="contacts" inverseEntity="Companies" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Companies" positionX="-132.265625" positionY="275.0234375" width="128" height="105"/>
+        <element name="Contacts" positionX="-325.45703125" positionY="126.88671875" width="128" height="165"/>
+        <element name="Addresses" positionX="-131.890625" positionY="68.5546875" width="128" height="148"/>
+    </elements>
+</model>
